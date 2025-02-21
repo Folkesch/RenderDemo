@@ -23,7 +23,7 @@ app.post("/signup", async (appReq, appRes) =>
     console.log(userID);
     console.log(fields);
 
-    if (username.length != 0)
+    if (userID.length != 0)
     {
       appRes.status(409);
       appRes.send("This usermane is already taken");
@@ -32,7 +32,7 @@ app.post("/signup", async (appReq, appRes) =>
     {
       const createUserQuery = "INSERT INTO user_pass (username, pass_hash) VALUES (?, ?);"
 
-      const hashedPassword = await bcrypt.hash(appReq.query.password, 10);
+      const hashedPassword = bcrypt.hashSync(appReq.query.password, 10);
 
       await pool.execute(createUserQuery, [appReq.query.username, hashedPassword]);
 
