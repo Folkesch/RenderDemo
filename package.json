@@ -1,0 +1,16 @@
+{
+  "name": "render-demo",
+  "version": "1.0.0",
+  "description": "A smal Render.com demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Folke",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}
